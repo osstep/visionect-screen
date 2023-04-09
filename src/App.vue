@@ -54,17 +54,6 @@ body {
   
   
 }
-#news-block {
-  
-}
-#weather-block {
-  
-}
-#currencies-block {
-  
-}
-#todo-list {
-  
-}
+
 
 </style>

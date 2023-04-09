@@ -57,7 +57,7 @@
         }, 
         async getWeaher() {
           //необходимо вписать координаты локации в lat и lon
-          const url = 'https://api.openweathermap.org/data/2.5/forecast?lat=55.479205&lon=37.32733&appid=97d065b72e4ce3b9757c945c97ee45c3&units=metric&lang=ru';
+          const url = 'https://api.openweathermap.org/data/2.5/forecast?lat=59.355920&lon=24.572355&appid=97d065b72e4ce3b9757c945c97ee45c3&units=metric&lang=ru';
           const options = {
           method: 'GET',
         };

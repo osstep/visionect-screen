@@ -19,13 +19,12 @@ export default {
             newItem: '',
             todos: [],
             showInput: true,
-            todosLocal: JSON.parse(localStorage.getItem("todoList"))
+            todosLocal: localStorage.getItem("todoList") ? JSON.parse(localStorage.getItem("todoList")) : []
         }
     },
     methods: {
         createTodo() {
             const newTodo = {id: Date.now(), value: this.newItem};
-            this.todos.push({id: Date.now(), value: this.newItem});
             this.newItem = '';
             this.todosLocal.push(newTodo);
             localStorage.setItem('todoList', JSON.stringify(this.todosLocal))
@@ -40,7 +39,7 @@ export default {
             } else {
                 this.showInput = true;
             }
-        }
+        },
   }
 }
 </script>
