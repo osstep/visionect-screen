@@ -35,7 +35,7 @@ export default {
     },
     mounted() {
         this.getCurrencies();
-        setInterval(() => {this.getCurrencies}, 1800000)
+        setInterval(() => {this.getCurrencies()}, 1800000)
 
     }
 }

@@ -6,8 +6,8 @@
         </div>
     </div>
     <div>
-        <div class="todo__item" v-for="(item, index) in todosLocal" :key="item.id">
-            <div class="todo__item__value" @click="removeTodo(index)">{{ item.value }}</div>
+        <div class="todo__item"  @click="removeTodo(index)" v-for="(item, index) in todosLocal" :key="item.id">
+            <div class="todo__item__value">{{ item.value }}</div>
         </div>
     </div>
 </template>
@@ -24,10 +24,13 @@ export default {
     },
     methods: {
         createTodo() {
-            const newTodo = {id: Date.now(), value: this.newItem};
-            this.newItem = '';
-            this.todosLocal.push(newTodo);
-            localStorage.setItem('todoList', JSON.stringify(this.todosLocal))
+            if (this.newItem) {
+                const newTodo = {id: Date.now(), value: this.newItem};
+                this.newItem = '';
+                this.todosLocal.push(newTodo);
+                localStorage.setItem('todoList', JSON.stringify(this.todosLocal))
+             }
+            
         },
         removeTodo(index) {
             this.todosLocal.splice(index, 1);
